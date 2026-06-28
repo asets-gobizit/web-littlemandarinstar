@@ -8,6 +8,7 @@ Astro/Sanity project for the Little Mandarin Star customer website.
 npm install
 npm run sync:static
 npm run build
+npm run sanity:seed
 npm run dev
 ```
 
@@ -26,6 +27,25 @@ For Vercel, add these environment variables to both Production and Preview befor
 - `PUBLIC_SANITY_VISUAL_EDITING_ENABLED`
 - `SANITY_API_READ_TOKEN` if the Sanity dataset is private
 - `SANITY_API_WRITE_TOKEN` only when import or write automation is needed
+
+## Sanity Content Seed
+
+After the real Sanity project exists and `SANITY_API_WRITE_TOKEN` is available locally, run:
+
+```powershell
+$env:PUBLIC_SANITY_PROJECT_ID="your-real-project-id"
+$env:PUBLIC_SANITY_DATASET="production"
+$env:PUBLIC_SANITY_API_VERSION="2026-06-28"
+$env:SANITY_API_WRITE_TOKEN="set-this-outside-git"
+npm run sanity:seed
+```
+
+The seed imports:
+
+- site settings,
+- English homepage document,
+- Spanish homepage document,
+- French homepage document.
 
 ## Current Deployment Status
 

@@ -8,6 +8,7 @@
     "build": "node scripts/check-project-size.mjs && astro build",
     "build:vercel": "node scripts/check-project-size.mjs && node scripts/check-deployment-readiness.mjs --vercel && astro build",
     "deployment:check": "node scripts/check-deployment-readiness.mjs",
+    "sanity:seed": "node scripts/import-sanity-seed.mjs",
     "preview": "astro preview --host 127.0.0.1 --port 4321",
     "astro": "astro",
     "size:check": "node scripts/check-project-size.mjs",
