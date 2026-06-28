@@ -24,9 +24,10 @@ For Vercel, add these environment variables to both Production and Preview befor
 - `PUBLIC_SANITY_PROJECT_ID`
 - `PUBLIC_SANITY_DATASET`
 - `PUBLIC_SANITY_API_VERSION`
-- `PUBLIC_SANITY_VISUAL_EDITING_ENABLED`
 - `SANITY_API_READ_TOKEN` if the Sanity dataset is private
 - `SANITY_API_WRITE_TOKEN` only when import or write automation is needed
+
+`PUBLIC_SANITY_VISUAL_EDITING_ENABLED=false` can stay in `.env.example` as a future optional flag, but it is not required for the first Vercel import.
 
 ## Sanity Content Seed
 
