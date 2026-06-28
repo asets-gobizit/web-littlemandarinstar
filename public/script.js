@@ -49,6 +49,20 @@ const uiText = {
       "Photo d'une activite de chinois pour eleves",
     ],
   },
+  ru: {
+    newsletterStatus: "Только локальный просмотр. Подключите сервис рассылки перед публикацией.",
+    contactPopupTitle: "Ваше сообщение готово",
+    contactPopupBody: "Ваше почтовое приложение открылось с сообщением для ruby@littlemandarinstar.com. Нажмите Отправить там, чтобы завершить отправку.",
+    contactPopupButton: "OK",
+    contactSubject: "Новое сообщение с сайта Little Star Mandarin School",
+    studentAlts: [
+      "Ученик держит творческую работу на китайскую тему",
+      "Ученик держит украшение к Китайскому Новому году",
+      "Ученик показывает китайскую культурную поделку",
+      "Лист для практики китайской каллиграфии",
+      "Фото занятия по китайскому языку для учеников",
+    ],
+  },
 };
 const currentText = uiText[pageLang] || uiText.en;
 
