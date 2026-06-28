@@ -9,3 +9,5 @@ npm-debug.log*
 .astro-preview.*.log
 qa-screenshots/
 .tools/
+
+.vercel
