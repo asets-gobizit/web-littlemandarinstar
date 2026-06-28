@@ -1,0 +1,68 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  lang: string;
+  canonical: string;
+  ogLocale: string;
+  bodyClass?: string;
+}
+
+const { title, description, lang, canonical, ogLocale, bodyClass = "" } = Astro.props;
+const site = "https://www.littlemandarinstar.com";
+const shareImage = `${site}/assets/brand/hero-classroom.png`;
+---
+<!doctype html>
+<html lang={lang} data-asset-base="/">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={`${site}/`} />
+    <link rel="alternate" hreflang="es" href={`${site}/es/`} />
+    <link rel="alternate" hreflang="fr" href={`${site}/fr/`} />
+    <link rel="alternate" hreflang="x-default" href={`${site}/`} />
+    <link rel="icon" type="image/png" href="/assets/brand/logo.png" />
+    <link rel="apple-touch-icon" href="/assets/brand/logo.png" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={shareImage} />
+    <meta property="og:site_name" content="Little Star Mandarin School" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={shareImage} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      name: "Little Star Mandarin School",
+      url: `${site}/`,
+      logo: `${site}/assets/brand/logo.png`,
+      image: shareImage,
+      description,
+      email: "ruby@littlemandarinstar.com",
+      telephone: "+34 627 770 000",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Carrer 295",
+        addressLocality: "La Canyada, Paterna",
+        postalCode: "46182",
+        addressRegion: "Valencia",
+        addressCountry: "ES"
+      },
+      areaServed: ["La Canyada", "Paterna", "Valencia"],
+      inLanguage: ["en", "es", "fr"]
+    })}></script>
+  </head>
+  <body class={bodyClass}>
+    <slot />
+    <script is:inline src="/script.js"></script>
+  </body>
+</html>
