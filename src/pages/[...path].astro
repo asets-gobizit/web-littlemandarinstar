@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { pages } from "../data/pages";
+import { getPages } from "../lib/pageContent";
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const pages = await getPages();
   return pages.map((page) => ({
     params: { path: page.path },
     props: { page }
