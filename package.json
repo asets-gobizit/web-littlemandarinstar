@@ -25,5 +25,8 @@
     "react-dom": "^19.2.7",
     "sanity": "^5.14.1",
     "typescript": "^5.8.0"
+  },
+  "overrides": {
+    "vite": "^7.3.2"
   }
 }

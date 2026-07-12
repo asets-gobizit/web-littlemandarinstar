@@ -40,27 +40,103 @@ const shareImage = `${site}/assets/brand/hero-classroom.png`;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={shareImage} />
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      name: "Little Star Mandarin School",
-      url: `${site}/`,
-      logo: `${site}/assets/brand/logo.png`,
-      image: shareImage,
-      description,
-      email: "ruby@littlemandarinstar.com",
-      telephone: "+34 627 770 000",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Carrer 295",
-        addressLocality: "La Canyada, Paterna",
-        postalCode: "46182",
-        addressRegion: "Valencia",
-        addressCountry: "ES"
+    <script type="application/ld+json" set:html={JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        name: "Little Star Mandarin School",
+        url: `${site}/`,
+        logo: `${site}/assets/brand/logo.png`,
+        image: shareImage,
+        description,
+        email: "ruby@littlemandarinstar.com",
+        telephone: "+34 627 770 000",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Carrer 295",
+          addressLocality: "La Canyada, Paterna",
+          postalCode: "46182",
+          addressRegion: "Valencia",
+          addressCountry: "ES"
+        },
+        areaServed: ["La Canyada", "Paterna", "Valencia"],
+        inLanguage: ["en", "es", "fr", "ru"],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+34 627 770 000",
+          contactType: "enrollment questions",
+          areaServed: "ES",
+          availableLanguage: ["English", "Spanish", "French", "Russian"]
+        },
+        knowsAbout: [
+          "Mandarin Chinese classes for children",
+          "Chinese characters",
+          "Chinese culture activities",
+          "Mandarin conversation practice",
+          "Children's language learning"
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Mandarin Chinese programs for children",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Course",
+                name: "Mandarin for Beginners",
+                description: "Friendly Mandarin classes for children starting with Chinese sounds, words, and characters."
+              }
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Course",
+                name: "Long-Term Mandarin Learning",
+                description: "Structured Mandarin lessons for steady progress, confidence, and daily conversation practice."
+              }
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Course",
+                name: "Chinese Culture Programs",
+                description: "Chinese culture activities for schools, groups, and extra-curriculum programs."
+              }
+            }
+          ]
+        }
       },
-      areaServed: ["La Canyada", "Paterna", "Valencia"],
-      inLanguage: ["en", "es", "fr", "ru"]
-    })}></script>
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Where does Little Star Mandarin School offer classes?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Little Star Mandarin School offers face-to-face Mandarin Chinese classes in La Canyada, Paterna, Valencia."
+            }
+          },
+          {
+            "@type": "Question",
+            name: "What Mandarin programs are listed on the website?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "The website lists Mandarin for Beginners, Long-Term Mandarin Learning, and Chinese Culture Programs for children."
+            }
+          },
+          {
+            "@type": "Question",
+            name: "How can parents contact Little Star Mandarin School?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Parents can contact the school by phone or WhatsApp at +34 627 770 000, or by email at ruby@littlemandarinstar.com."
+            }
+          }
+        ]
+      }
+    ])}></script>
   </head>
   <body class={bodyClass}>
     <slot />

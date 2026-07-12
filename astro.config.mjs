@@ -14,7 +14,34 @@ export default defineConfig({
   site: env.PUBLIC_SITE_URL || "https://www.littlemandarinstar.com",
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes("/admin/"),
+      i18n: {
+        defaultLocale: "en",
+        locales: {
+          en: "en",
+          es: "es",
+          fr: "fr",
+          ru: "ru"
+        }
+      },
+      serialize(item) {
+        if (!item.links || item.links.length === 0) {
+          return item;
+        }
+
+        return {
+          ...item,
+          links: [
+            ...item.links,
+            {
+              lang: "x-default",
+              url: "https://www.littlemandarinstar.com/"
+            }
+          ]
+        };
+      }
+    }),
     sanity({
       projectId,
       dataset,
